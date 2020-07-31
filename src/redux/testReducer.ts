@@ -1,20 +1,23 @@
 const TEST_CONSTANT = 'testReducer/TEST-CONSTANT';
 
 const initialState = {
-    test
+    test: 'test'
 };
 type InitialStateType = typeof initialState;
 
-export const testReducer = (state: InitialStateType = initialState, action:ActionType):InitialStateType => {
+export const testReducer = (state: InitialStateType = initialState, action: TestActionType):InitialStateType => {
     switch (action.type) {
 
         default: return state;
     }
 }
+type actionsType = TestActionType;
 
 export const action:{type: string} = {
     type: TEST_CONSTANT
 }
-export type ActionType = typeof action;
+export type TestActionType = {
+    type: typeof TEST_CONSTANT
+};
 
 export default testReducer;
